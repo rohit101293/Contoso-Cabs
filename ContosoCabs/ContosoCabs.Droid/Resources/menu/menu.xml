@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/homefrag"
+        android:title="Home"
+        android:icon="@drawable/home"
+        myapp:showAsAction="always"
+        />
+  <item android:id="@+id/profilefrag"
+        android:title="Profile"
+        android:icon="@drawable/accounts"
+        myapp:showAsAction="always" />
+  <item android:id="@+id/paymentfrag"
+      android:title="Payments"
+      android:icon="@drawable/payments"
+      myapp:showAsAction="always" />
+  <item android:id="@+id/invitefrag"
+        android:title="Invite"
+        android:icon="@drawable/invitation"
+        myapp:showAsAction="always"
+        />
+  <item android:id="@+id/feedbackfrag"
+        android:icon="@drawable/feedback"
+        android:title="Feedback"
+        myapp:showAsAction="always" />
+</menu>

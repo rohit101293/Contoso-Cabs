@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Navigation.Invite"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <ScrollViewer>
+        <Grid x:Name="LoginDetails"  Background="#e6e6e6">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                            <AdaptiveTrigger MinWindowWidth="720" />
+                        </VisualState.StateTriggers>
+
+                        <VisualState.Setters>
+                            <Setter Target="myPanel.Opacity" Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="6*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="0" Fill="CadetBlue" HorizontalAlignment="Stretch"/>
+                    <RelativePanel Grid.Row="0">
+                        <TextBlock Name="Title" Text=" Invite"  FontWeight="SemiBold" FontSize="30" Foreground="Black" HorizontalAlignment="Left"></TextBlock>
+                    </RelativePanel>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="0.5*"/>
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <!--<RelativePanel Grid.Row="0" Grid.Column="1" >
+                            --><!--<Image Name="userLogo" Source="ms-appx:///Assets/sharing.png" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,88,0,-0.333"></Image>--><!--
+                        </RelativePanel>-->
+                        <RelativePanel Grid.Row="1" Grid.Column="1" Background="White" IsHitTestVisible="False" BorderBrush="#e6e6e6">
+                            <TextBlock x:Name="lheader" HorizontalAlignment="Left" 
+        	 TextWrapping="Wrap"  TextAlignment="Center"
+        	Text="Things are best when shared with friends and family!! Share Contoso Cabs and help everyone choose the best cabs around!"
+        	VerticalAlignment="Top" 
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+        	Padding="10,10,10,10" FontSize="16" Foreground="Black" Margin="0,10,0,0" />
+                        </RelativePanel>
+                    </Grid>
+                    <RelativePanel Grid.Row="2" Background="White" >
+                        <Button Name="jbs" FontSize="20" Width="150" Style="{StaticResource BlackButtonStyle}" Content="Invite" Click="jbskj" RelativePanel.AlignHorizontalCenterWithPanel="True" Height="45" Margin="0,0,0,-13"/>
+                    </RelativePanel>
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</Page>

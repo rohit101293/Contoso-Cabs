@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{326EFDEB-5848-4298-A2EE-AFD761EC904A}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContosoCabs.UWP</RootNamespace>
+    <AssemblyName>ContosoCabs.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>ContosoCabs.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\RequestPassword.xaml.cs">
+      <DependentUpon>RequestPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\OAuthWebViewPage.xaml.cs">
+      <DependentUpon>OAuthWebViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\PasswordForgot.xaml.cs">
+      <DependentUpon>PasswordForgot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking Pages\BookingPage.xaml.cs">
+      <DependentUpon>BookingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Triggers\FontSizeTrigger.cs" />
+    <Compile Include="Essentials\MapRoutes.cs" />
+    <Compile Include="Essentials\RouteClient.cs" />
+    <Compile Include="Booking Pages\EstimationList.xaml.cs">
+      <DependentUpon>EstimationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking Pages\CabBookingDetails.xaml.cs">
+      <DependentUpon>CabBookingDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Booking Pages\CabPageDestination.xaml.cs">
+      <DependentUpon>CabPageDestination.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\CabsPage.xaml.cs">
+      <DependentUpon>CabsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemControlTemplate.xaml.cs">
+      <DependentUpon>ItemControlTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\Feedback.xaml.cs">
+      <DependentUpon>Feedback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\Intro.xaml.cs">
+      <DependentUpon>Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\Invite.xaml.cs">
+      <DependentUpon>Invite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\ManageAccounts.xaml.cs">
+      <DependentUpon>ManageAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Speech\Arguments.cs" />
+    <Compile Include="Speech\DictionaryClass.cs" />
+    <Compile Include="Speech\VoiceCommandType.cs" />
+    <Compile Include="ViewModel\CabsListViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ContosoCabs.UWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\cab.png" />
+    <Content Include="Assets\cablogo.png" />
+    <Content Include="Assets\call.png" />
+    <Content Include="Assets\canvas.png" />
+    <Content Include="Assets\cortana.png" />
+    <Content Include="Assets\fork.png" />
+    <Content Include="Assets\gpsLogo.png" />
+    <Content Include="Assets\insights.PNG" />
+    <Content Include="Assets\microphone.png" />
+    <Content Include="Assets\microphone1.png" />
+    <Content Include="Assets\ola.jpeg" />
+    <Content Include="Assets\ola.png" />
+    <Content Include="Assets\sharing.png" />
+    <Content Include="Assets\Uber-logo-880x660.png" />
+    <Content Include="Assets\uber.png" />
+    <Content Include="Assets\user1.png" />
+    <Content Include="Assets\user2.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="VoiceCommands.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Authentication\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Authentication\RequestPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Authentication\OAuthWebViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Authentication\PasswordForgot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Authentication\SignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking Pages\BookingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking Pages\EstimationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking Pages\CabBookingDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking Pages\CabPageDestination.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home\CabsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemControlTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navigation\Feedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navigation\Intro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navigation\Invite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navigation\ManageAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navigation\NavigationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Navigation\UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\CustomStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContosoCabs\ContosoCabs\ContosoCabs.csproj">
+      <Project>{580FA83D-C60B-4D8B-AF04-DCF5FB37E942}</Project>
+      <Name>ContosoCabs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VoiceCommandService\VoiceCommandService.csproj">
+      <Project>{58d2f47a-d5dc-4bb6-b21e-a2228a12dc34}</Project>
+      <Name>VoiceCommandService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Bing.Maps.Xaml, Version=1.313.0825.0">
+      <Name>Bing Maps for C#, C++, or Visual Basic</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

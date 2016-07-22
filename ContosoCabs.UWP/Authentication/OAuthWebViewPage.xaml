@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Auth.OAuthWebViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Auth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="12,10,12,12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Description:"/>
+            <TextBlock  TextWrapping="Wrap">
+                Sign In to Uber Account to Book a Ride
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap">
+                Contoso Cabs uses your account details for the sole purpose of your ride booking only. 
+                For More details visit our
+                <Hyperlink Click="MoreLess_Click"><Run x:Name="MoreLessText">Privacy Policy</Run></Hyperlink>
+            </TextBlock>
+            <TextBlock x:Name="MoreInformationText"  TextWrapping="Wrap" Visibility="Collapsed">
+                The following pages can call window.&#8203;external.&#8203;notify:
+                <LineBreak/>
+                ● Content loaded using the NavigateToString() method; or ms-appx-web, ms-appdata, ms-webview-stream:// URI
+                schemes.
+                <LineBreak/>               
+                ● Content loaded from the web, provided they use the https:// protocol, and the site is listed
+                in the app's manifest under the Content Uri's node.
+            </TextBlock>
+        </StackPanel>
+        <WebView x:Name="WebViewControl" Grid.Row="1" ScriptNotify="WebViewControl_ScriptNotify"/>
+    </Grid>
+</Page>

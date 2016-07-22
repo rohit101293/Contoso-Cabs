@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{580FA83D-C60B-4D8B-AF04-DCF5FB37E942}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ContosoCabs</RootNamespace>
+    <AssemblyName>ContosoCabs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseModels\ErrorResponse.cs" />
+    <Compile Include="ResponseModels\Private\BookingDetailsResponse.cs" />
+    <Compile Include="ResponseModels\Private\CabsResponse.cs" />
+    <Compile Include="ResponseModels\Private\GeoResponse.cs" />
+    <Compile Include="ResponseModels\Private\PlacesResponse.cs" />
+    <Compile Include="ResponseModels\Private\PriceEstimateResponse.cs" />
+    <Compile Include="ResponseModels\Private\ReverseGeoResposne.cs" />
+    <Compile Include="ResponseModels\Private\SearchResponse.cs" />
+    <Compile Include="ResponseModels\Private\SendTokenResponse.cs" />
+    <Compile Include="ResponseModels\Private\UserResponse.cs" />
+    <Compile Include="ServiceModels\Booking.cs" />
+    <Compile Include="ServiceModels\Cab.cs" />
+    <Compile Include="ServiceModels\CabEstimate.cs" />
+    <Compile Include="ServiceModels\CabEstimateEx.cs" />
+    <Compile Include="ServiceModels\DriverDetails.cs" />
+    <Compile Include="ServiceModels\Fare.cs" />
+    <Compile Include="ResponseModels\Auth\OtpResponse.cs" />
+    <Compile Include="ResponseModels\Auth\SignInResponse.cs" />
+    <Compile Include="ResponseModels\Auth\SignupResponse.cs" />
+    <Compile Include="ServiceModels\Position.cs" />
+    <Compile Include="ServiceModels\PriceEstimate.cs" />
+    <Compile Include="ServiceModels\Suggestion.cs" />
+    <Compile Include="ServiceModels\User.cs" />
+    <Compile Include="ServiceModels\Account.cs" />
+    <Compile Include="ServiceModels\VehicleDetails.cs" />
+    <Compile Include="Service\CabsAPI.cs" />
+    <Compile Include="Service\CabsClient.cs" />
+    <Compile Include="Service\NetworkConstants.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\ResponseCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1-beta1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

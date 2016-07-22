@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Navigation.NavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MySplitView.Height" Value="420"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MySplitView.Height" Value=""></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
+        <Button Name="SplitViewButton" Background="Transparent" 
+                Padding="0,-6" Margin="12"
+                Click="SplitViewButton_Click">
+            <FontIcon FontFamily="{ThemeResource ContentControlThemeFontFamily}" Glyph="&#x2261;" FontSize="32" Margin="0,-8,0,0"/>
+        </Button>
+        
+        <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" Text="Contoso Cabs" HorizontalAlignment="Stretch"
+                   RelativePanel.RightOf="SplitViewButton"  />
+        
+        <SplitView x:Name="MySplitView" PaneBackground="{ThemeResource ApplicationPageBackgroundThemeBrush}" OpenPaneLength="200" Height="590"
+                   RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="SplitViewButton" VerticalAlignment="Stretch">
+            <SplitView.Pane>
+                <Grid Background="White">
+
+                    <ListBox Background="White" Grid.Row="0" Foreground="CadetBlue" SelectionMode="Single" Name="IconListBox" SelectionChanged="IconListBox_SelectionChanged">
+                        <ListBoxItem Name="About">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource IconTextBlockStyle}"  Text="&#xE897;"/>
+                                <TextBlock  Text="About" FontSize="24" Margin="20,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="Home">
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource IconTextBlockStyle}"  Text="&#xEA8A;"/>
+                                <TextBlock  Text="Home" FontSize="24" Margin="20,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="Profile">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource IconTextBlockStyle}"  Text="&#xEA8C;"/>
+                                <TextBlock Text="Profile" FontSize="24" Margin="20,0,0,0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="Invite">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8F;"/>
+                                <TextBlock Text="Invite" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="Feedback">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock  Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="hello">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Visibility="Collapsed" Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock Visibility="Collapsed" Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="hello1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Visibility="Collapsed" Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock Visibility="Collapsed" Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="hello2">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Visibility="Collapsed" Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock Visibility="Collapsed" Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="hello3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Visibility="Collapsed" Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock Visibility="Collapsed" Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="hello4">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Visibility="Collapsed" Style="{StaticResource IconTextBlockStyle}" Text="&#xEA8D;"/>
+                                <TextBlock Visibility="Collapsed" Text="Feedback" FontSize="24" Margin="20,0,0,0"  />
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MyFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Frame>
+            </SplitView.Content>
+        </SplitView>
+        <!-- Responsive VisualStates -->
+        <!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    --><!-- VisualState to be triggered when window width is >=720 effective pixels --><!--
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        --><!-- Widest possible layout moves some elements around to optimize for more available width 
+                        and keeps SplitView pane always showing inline --><!--
+                        <Setter Target="MySplitView.DisplayMode" Value="Inline" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="True" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    --><!-- VisualState to be triggered when window width is >=548 and <720 effective pixels --><!--
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="548" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        --><!-- For intermediate window widths as well as most phones on landscape orientation, 
+                        this state keeps primary layout narrow while showing the splitview pane to take advantage of more available width than narrow layout --><!--
+                        <Setter Target="MySplitView.DisplayMode" Value="Inline" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="True" />
+
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    --><!-- VisualState to be triggered when window width is >=0 and <548 effective pixels --><!--
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        --><!-- For the most narrow windows and phones in portrait orientation, this state collapses the SplitView pane into overlay mode
+                        and adds dynamic RelativePanel constraints that puts all elements stacked below each other --><!--
+                        <Setter Target="MySplitView.DisplayMode" Value="Overlay" />
+                        <Setter Target="MySplitView.IsPaneOpen" Value="False" />
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
+    </RelativePanel>
+</Page>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="EnglishCommandSet">
+    <CommandPrefix>Contoso</CommandPrefix>
+    <Example>Speak Something</Example>
+    <Command Name="simpleOpeningApp">
+      <Example>Voice command</Example>
+      <ListenFor>Open Contoso cabs</ListenFor>
+      <Feedback>Diverting To Contoso cabs</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="voicecommand2">
+      <Example>additional terms</Example>
+      <ListenFor>Cabs show me the cabs</ListenFor>
+      <ListenFor>Cabs Book [me]a cab</ListenFor>
+      <ListenFor>Cabs Show me [comparison between] Ola and Uber cabs</ListenFor>
+      <ListenFor>Cabs Show me [the] cheapest cab</ListenFor>
+      <Feedback>Diverting to Contoso cabs</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="costEstimateApp">
+      <Example>Cabs get fare estimate</Example>
+      <ListenFor>Cabs list [cab] cost from {source} to {destination}</ListenFor>
+      <ListenFor>Cabs Show [me] [cab] cost [from] {source} to {destination}</ListenFor>
+      <ListenFor>Cabs Show [me] [cab] cost to {destination}</ListenFor>
+      <ListenFor>Cabs Estimate [cab] cost from {source} to {destination}</ListenFor>
+      <Feedback>Estimating available cabs for you</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="costEstimateCustomApp">
+      <Example>Cabs get fare estimate</Example>
+      <ListenFor>Cabs list [cab] cost to {destination}</ListenFor>
+      <ListenFor>Cabs Show [me] [cab] cost to {destination}</ListenFor>
+      <ListenFor>Cabs Estimate [cab] cost  to {destination}</ListenFor>
+      <Feedback>Estimating available cabs for you</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="toCustomLocationApp">
+      <Example>Cabs Booking cab to desired location</Example>
+      <ListenFor>Cabs Book me [a] best cab to {location}</ListenFor>
+      <ListenFor>Cabs Book [me] [a] best cab from [here] to {location}</ListenFor>
+      <Feedback>Booking best available cab to your desired location</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="bookFromXToYApp">
+      <Example>Canvas Book me a cab from Home to Work</Example>
+      <ListenFor>Cabs Book [me] [a] cab from {bookFromX} to {bookFromY}</ListenFor>
+      <ListenFor>Cabs Show [me] [the] cabs from {bookFromX} to {bookFromY}</ListenFor>
+      <ListenFor>Cabs List [the] cabs from {bookFromX} to {bookFromY}</ListenFor>
+      <Feedback> Getting Cabs from {bookFromX} to {bookFromY} </Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="bookcheapestApp">
+      <Example>booking cheapest cabs</Example>
+      <ListenFor>Cabs Book me [a][the] cheapest cab to {destination}</ListenFor>
+      <ListenFor>Cabs Book me [the] [a] cheapest cab from {source} to {destination}</ListenFor>
+      <Feedback>Finding cheap and best cabs available for you</Feedback>
+      <Navigate/>
+    </Command>
+    <Command Name="bookcheapest">
+      <Example>booking cheapest cabs</Example>
+      <ListenFor>Canvas Book me [a][the] cheapest cab to {destination}</ListenFor>
+      <ListenFor>Canvas Book me [the] [a] cheapest cab from {source} to {destination}</ListenFor>
+      <Feedback>Finding cheap and best cabs available for you</Feedback>
+      <VoiceCommandService Target="ContosoCabsVoiceCommandService"/>
+    </Command>
+    <Command Name="costEstimate">
+      <Example>Canvas get fare estimate</Example>
+      <ListenFor>Canvas list [cab] cost from {source} to {destination}</ListenFor>
+      <ListenFor>Canvas Show [me] [cab] cost [from] {source} to {destination}</ListenFor>
+      <ListenFor>Canvas Show [me] [cab] cost to {destination}</ListenFor>
+      <ListenFor>Canvas Estimate [cab] cost from {source} to {destination}</ListenFor>
+      <Feedback>Estimating available cabs for you</Feedback>
+      <VoiceCommandService Target="ContosoCabsVoiceCommandService"/>
+    </Command>
+    <Command Name="costEstimateCustom">
+      <Example>Canvas get fare estimate</Example>
+      <ListenFor>Canvas list [cab] cost to {destination}</ListenFor>
+      <ListenFor>Canvas Show [me] [cab] cost to {destination}</ListenFor>
+      <ListenFor>Canvas Estimate [cab] cost  to {destination}</ListenFor>
+      <Feedback>Estimating available cabs for you</Feedback>
+      <VoiceCommandService Target="ContosoCabsVoiceCommandService"/>
+    </Command>
+    <Command Name="toCustomLocation">
+      <Example>Canvas Booking cab to desired location</Example>
+      <ListenFor>Canvas Book me [a] best cab to {location}</ListenFor>
+      <ListenFor>Canvas Book [me] [a] best cab from [here] to {location}</ListenFor>
+      <Feedback>Booking best available cab to your desired location</Feedback>
+      <VoiceCommandService Target="ContosoCabsVoiceCommandService"/>
+    </Command>
+    <Command Name="bookFromXToY">
+      <Example>Canvas Book me a cab from Home to Work</Example>
+      <ListenFor>Canvas Book [me] [a] cab from {bookFromX} to {bookFromY}</ListenFor>
+      <ListenFor>Canvas Show [me] [the] cabs from {bookFromX} to {bookFromY}</ListenFor>
+      <ListenFor>Canvas List [the] cabs from {bookFromX} to {bookFromY}</ListenFor>
+      <Feedback> Getting Cabs from {bookFromX} to {bookFromY} </Feedback>
+      <VoiceCommandService Target="ContosoCabsVoiceCommandService"/>
+    </Command>
+    <PhraseList Label="bookFromX">
+      <Item> Work </Item>
+      <Item> Home </Item>
+      <Item> Aunts Place </Item>
+      <Item> School </Item>
+    </PhraseList>
+    <PhraseList Label="bookFromY">
+      <Item> Work </Item>
+      <Item> Home </Item>
+      <Item> Aunts Place </Item>
+      <Item> School </Item>
+    </PhraseList>
+    <PhraseTopic Label="source" Scenario="Commands"></PhraseTopic>
+    <PhraseTopic Label="destination" Scenario="Commands"></PhraseTopic>
+    <PhraseTopic Label="location" Scenario="Commands"></PhraseTopic>
+  </CommandSet>
+</VoiceCommands>

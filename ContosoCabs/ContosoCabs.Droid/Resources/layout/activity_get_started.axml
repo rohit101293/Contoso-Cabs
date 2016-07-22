@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/taxi">
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Get Started"
+                android:id="@+id/btnGetStarted"
+                android:layout_marginBottom="20dp"
+                android:background="@color/blue"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="7"
+        android:weightSum="10"
+        android:background="#404040"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="6"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffffff"
+                    android:id="@+id/bookText"
+                    android:layout_centerVertical="true"
+                    android:text="Book cab using speech" />
+                <Button
+                    android:id="@+id/btnuri"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:text="Open" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/imagespeech"
+                    android:src="@drawable/mic" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

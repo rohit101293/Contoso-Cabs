@@ -1,0 +1,184 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.BookingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP"
+     xmlns:bm="using:Bing.Maps"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--BOOKING-->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="thirdColumn.Width" Value="0.3*" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="thirdColumn.Width" Value="*" />
+                        <Setter Target="fourthColumn.Width" Value="0" />
+                        <Setter Target="fifthColumn.Width" Value="0" />
+                        <Setter Target="second.(Grid.Column)" Value="1"/>
+                        <Setter Target="second.(Grid.Row)" Value="4"/>
+                        <Setter Target="third.(Grid.Column)" Value="1"/>
+                        <Setter Target="third.(Grid.Row)" Value="5"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ScrollViewer>
+            <Grid Background="#E6E6E6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.35*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <!--<Rectangle Fill="#e6e6e6" Grid.Row="0"></Rectangle>
+                <TextBlock Text="Booking Details" HorizontalAlignment="Center" FontSize="18" Grid.Row="0"/>-->
+                <Maps:MapControl x:Name="MyMap" Grid.Row="1" Margin="7"/>
+                <!--<Slider x:Name="mySlider" Maximum="20" Minimum="10" />-->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.15*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition x:Name="thirdColumn" Width="*"/>
+                        <ColumnDefinition x:Name="fourthColumn" Width="1.5*"/>
+                        <ColumnDefinition x:Name="fifthColumn" Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.ColumnSpan="5" Background="CadetBlue"></Grid>
+                    <Grid Grid.Row="1" Background="White" Grid.Column="1">
+                        <!--<Image Source="ms-appx:///Assets/gpsLogo.png" HorizontalAlignment="Center"  Height="20" Width="20" Margin="70,2,220,14"/>-->
+                        <TextBox x:Name="SourceBox" 
+                        Text="PICKUP LOCATION" FontSize="10"
+                             FontWeight="Bold" Foreground="Green"
+                        BorderBrush="Transparent" IsHitTestVisible="False"
+                        HorizontalAlignment="Center"  Opacity="0.85" />
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="1" Background="White">
+
+                        <TextBox x:Name="SrcBox" 
+                        Text="" FontSize="8" IsHitTestVisible="False"
+                      Foreground="Green" TextWrapping="Wrap"
+                        BorderBrush="Transparent" TextAlignment="Center"
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Stretch"  Opacity="0.85" />
+                    </Grid>
+                    <Grid x:Name="second" Grid.Row="1" Grid.Column="3" Background="White">
+                        <!--<Image Source="ms-appx:///Assets/gpsLogo.png" HorizontalAlignment="Center" Height="20" Width="26" Margin="58,2,226,14"/>-->
+                        <TextBox x:Name="DestinationBox" TextAlignment="Left"
+                        Text="DROPOFF LOCATION" Foreground="Red" FontWeight="Bold"
+                        Background="White" BorderBrush="Transparent" 
+                         FontSize="10" IsHitTestVisible="False"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"  Opacity="0.85" />
+                    </Grid>
+                    <Grid x:Name="third" Grid.Row="2" Grid.Column="3" Background="White">
+                        <TextBox x:Name="DestBox" TextAlignment="Center"
+                        Text="" Foreground="Red" IsHitTestVisible="False"
+                        Background="White" BorderBrush="Transparent" 
+                        FontSize="9" TextWrapping="Wrap"
+                        VerticalAlignment="Top" Height="39"
+                        HorizontalAlignment="Stretch" Opacity="0.85" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Background="#e6e6e6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+
+                    </Grid.ColumnDefinitions>
+                    <RelativePanel Background="White"  Grid.Row="1" Grid.Column="1" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="eta"  IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="ETA" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" VerticalAlignment="Bottom" Margin="-13,0,-12,-7.667" Width="53" RenderTransformOrigin="0.471,1.708"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="1" Grid.Column="2" BorderBrush="#e6e6e6" BorderThickness="2" >
+                        <TextBlock Name="Price " IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Price" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" VerticalAlignment="Center" Margin="-13,0,-12,-7.667" Width="53" RenderTransformOrigin="0.472,1.708"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="1" Grid.Column="3" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="Distance" IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Distance" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" VerticalAlignment="Bottom" Margin="-13,0,-12,-7.333" Width="53"/>
+                    </RelativePanel>
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="6" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <TextBlock Text="Loading Data" 
+                           Visibility="Collapsed"
+                           FontSize="20"
+                           Name="TB_Loader" Margin="4" />
+                        <ProgressBar Name="Loader" 
+                             FontSize="20"
+                             Visibility="Collapsed"
+                             IsIndeterminate="True" Margin="4" />
+                    </StackPanel>
+                    <RelativePanel Background="White" Grid.Row="1" Grid.Column="4" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="Time"  IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="Time" TextAlignment="Center" HorizontalAlignment="Center" FontSize="13" VerticalAlignment="Bottom" Margin="-4.333,0,-3.333,-7.667" Width="53"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="2" Grid.Column="1" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="ETAData"  IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="" TextAlignment="Center" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="2" Grid.Column="2" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="PriceData"  IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="" TextAlignment="Center" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="2" Grid.Column="3" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="DistanceData"  IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="" TextAlignment="Center" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
+                    </RelativePanel>
+                    <RelativePanel Background="White" Grid.Row="2" Grid.Column="4" BorderBrush="#e6e6e6" BorderThickness="2">
+                        <TextBlock Name="TimeData"   IsHitTestVisible="False" RelativePanel.AlignHorizontalCenterWithPanel="True" Text="" TextAlignment="Center" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
+                    </RelativePanel>
+                </Grid>
+
+                <RelativePanel Grid.Row="3" Background="WhITE">
+                    <Button Height="30" Width="250" Style="{StaticResource BlackButtonStyle}"  FontSize="13" Content="Confirm Booking" 
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" Click="ConfirmBooking"
+                        RelativePanel.AlignVerticalCenterWithPanel="True"></Button>
+                </RelativePanel>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

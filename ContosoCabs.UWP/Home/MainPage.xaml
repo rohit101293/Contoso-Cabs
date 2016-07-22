@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LoginDetails"  >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="myPanel.Opacity" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid Background="#e6e6e6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0" Fill="CadetBlue" HorizontalAlignment="Stretch"/>
+            <RelativePanel Grid.RowSpan="2">
+                <Image Name="IMG" Source="ms-appx:///Assets/cab.png" Width="70" Height="70" HorizontalAlignment="Center" Margin="10,10,-10,-10"/>
+            </RelativePanel>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="50"/>
+
+
+                </Grid.RowDefinitions>
+                <RelativePanel Grid.RowSpan="2" Grid.ColumnSpan="3" >
+                    <TextBlock x:Name="textBlock" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Left"  TextWrapping="Wrap" Margin="0,70,0,0" Text="Drive with Contoso cabs" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Top" Height="50" Width="324"/>
+                    <TextBlock x:Name="textBlock1" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Left" RelativePanel.Below="textBlock"  TextWrapping="Wrap" Text="Find the best available cabs on the go!" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Top" Height="44" Width="340" />
+                </RelativePanel>
+                <RelativePanel Grid.Row="2" Grid.Column="1" BorderBrush="#e6e6e6"/>
+
+                <RelativePanel Grid.Row="2"   >
+
+                    <Button Name="button" Width="241" HorizontalAlignment="Center" Click="button_Click" 
+                             Content="Log In" FontSize="18" Style="{StaticResource BlackButtonStyle}"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" Height="40" Margin="-43,0,-48,-11"/>
+                </RelativePanel>
+                <RelativePanel Grid.Row="4"  >
+                    <Button Name="button1" Width="239" HorizontalAlignment="Center" Click="button1_Click"
+                             Content="Sign Up" FontSize="18" Style="{StaticResource BlackButtonStyle}"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" Height="40" Margin="-43,0,-46,-11"/>
+
+                </RelativePanel>
+                <RelativePanel Grid.Row="1">
+
+                </RelativePanel>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+</Page>
+

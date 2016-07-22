@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:weightSum="9"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:id="@+id/contosocabheader"
+                android:textColor="#006df0"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:text="Contoso Cabs" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:weightSum="6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="#d90000"
+                    android:text="SIgn In"
+                    android:id="@+id/login"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="#d90000"
+                    android:text="SIGN UP"
+                    android:id="@+id/signup"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/copyright"
+                android:text="Copyright @2016 " />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

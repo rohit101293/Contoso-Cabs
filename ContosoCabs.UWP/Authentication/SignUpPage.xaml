@@ -1,0 +1,134 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Auth.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Auth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+        <Grid x:Name="Details" Background="#E6E6E6" >
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                            <AdaptiveTrigger MinWindowWidth="0" />
+                        </VisualState.StateTriggers>
+
+                        <VisualState.Setters>
+                            <Setter Target="first.Width" Value="0.5*" />
+                            <Setter Target="second.Width" Value="2*"/>
+                        <Setter Target="third.Width" Value="0.5*" />
+                    </VisualState.Setters>
+                    </VisualState>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                            <AdaptiveTrigger MinWindowWidth="600" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="45"/>
+
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0" Fill="CadetBlue" HorizontalAlignment="Stretch"/>
+            <RelativePanel Grid.Row="0">
+                <TextBlock Name="Title" Text="Sign Up"  FontWeight="SemiBold" FontSize="22" Foreground="Black" HorizontalAlignment="Left"></TextBlock>
+            </RelativePanel>
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="first" Width="1.5*"/>
+                    <ColumnDefinition x:Name="second" Width="2*"/>
+                    <ColumnDefinition x:Name="third" Width="1.5*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <RelativePanel x:Name="rel" Grid.Column="1" >
+                    <TextBox x:Name="UsernameBox"
+                             Padding="5"
+                                     Margin="0,110,0,0"
+                 TextWrapping="Wrap" Background="White" BorderBrush="#e6e6e6" 
+                 InputScope="AlphanumericFullWidth" IsColorFontEnabled="False" 
+                     FontSize="20" PlaceholderText="Name"
+                                     RelativePanel.AlignLeftWithPanel="True"
+                                     RelativePanel.AlignRightWithPanel="True"/>
+
+
+                    <TextBox x:Name="ContactNumberBox" 
+                             Padding="5"
+                  InputScope="NameOrPhoneNumber" Background="White"
+                 TextWrapping="Wrap" RelativePanel.Below="UsernameBox"
+                 VerticalAlignment="Top" RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                BorderBrush="#e6e6e6" IsColorFontEnabled="False" FontSize="20" PlaceholderText="Contact No"/>
+
+                    <TextBox x:Name="EmailidBox" 
+                             Padding="5"
+                 InputScope="EmailNameOrAddress" Background="White"
+                 RelativePanel.AlignHorizontalCenterWithPanel="True"
+                 VerticalAlignment="Top" RelativePanel.Below="ContactNumberBox"
+                  BorderBrush="#e6e6e6" RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                  IsColorFontEnabled="False" FontSize="20" PlaceholderText="Email ID" />
+                    <RelativePanel/>
+                    <PasswordBox x:Name="PasswordBox" 
+                                 Padding="5"
+                      RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                      Background="White" BorderBrush="#e6e6e6" RelativePanel.Below="EmailidBox"
+                     FontSize="20" PlaceholderText="Password" />
+
+                    <RelativePanel/>
+                    <PasswordBox x:Name="ConfirmPasswordBox"
+                                 Padding="5"
+                     RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                     VerticalAlignment="Top" BorderBrush="#e6e6e6" RelativePanel.Below="PasswordBox"
+                     Background="White"
+                     FontSize="20" PlaceholderText="ConfirmPassword" />
+
+                    <CheckBox x:Name="condition"   Content="I agree to all terms and conditions" 
+                              RelativePanel.Below="ConfirmPasswordBox"
+                               RelativePanel.AlignLeftWithPanel="True"
+                                 RelativePanel.AlignRightWithPanel="True"
+                               VerticalAlignment="Top" Foreground="CornflowerBlue"
+                               BorderThickness="0,0,0,0"  />
+
+
+                    <HyperlinkButton Name="Hyperlink" RelativePanel.Below="condition" Content="Terms and Conditions" 
+                                     Foreground="Black" VerticalAlignment="Top" RelativePanel.AlignLeftWithPanel="True"
+                                 RelativePanel.AlignRightWithPanel="True"
+                                     NavigateUri="http://contosocabs.azurewebsites.net/tc"/>
+
+
+
+
+
+
+                    <ProgressRing Name="progress" HorizontalAlignment="Left" 
+               RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.Below="Hyperlink"
+               Height="40" Width="40"/>
+
+                </RelativePanel>
+            </Grid>
+            <RelativePanel Grid.Row="2" Background="White">
+                <Button Name="Signup" Width="241" HorizontalAlignment="Center" Click="Signup_Click" 
+                             Content="Sign Up" FontSize="18" Style="{StaticResource BlackButtonStyle}"
+                            
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" Height="40" Margin="-43,0,-48,-11"/>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Navigation.Intro"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer>
+    <Grid Background="#e6e6e6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="White" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RelativePanel>
+                    <Image Name="img" Height="80" Margin="0,40,0,10"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  Source="ms-appx:///Assets/microphone1.png" VerticalAlignment="Center" />
+                </RelativePanel>
+                <RelativePanel Grid.Row="1">
+                    <TextBlock Name="des" FontSize="13" TextAlignment="Center" Text="Interact with Cortana to directly launch the Booking page of the application." TextWrapping="Wrap"/>
+                </RelativePanel>
+            </Grid>
+            <Grid Grid.Column="1" Background="White" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RelativePanel>
+                    <Image Name="img2" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Source="ms-appx:///Assets/insights.png" VerticalAlignment="Center" Margin="0,50,0,10"/>
+                </RelativePanel>
+                <RelativePanel Grid.Row="1">
+                    <TextBlock Name="des1"  FontSize="13" TextAlignment="Center"  Text="Uses your day to day information to dynamically suggest you the best cabs available." TextWrapping="Wrap"/>
+                </RelativePanel>
+            </Grid>
+            <Grid Grid.Column="2" Background="White" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RelativePanel>
+                    <Image Name="img3" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Source="ms-appx:///Assets/cortana.png" VerticalAlignment="Center" Margin="0,30,0,0"/>
+                </RelativePanel>
+                <RelativePanel Grid.Row="1">
+                    <TextBlock Name="des2"  FontSize="13" TextAlignment="Center" Text="Interact with Cortana at every step of your booking and directly book your cab" TextWrapping="Wrap"/>
+                </RelativePanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="13" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RelativePanel>
+                <TextBlock Name="des3" FontSize="20" Margin="0,10,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" TextAlignment="Center" Text="Multiple Providers" TextWrapping="Wrap"/>
+                </RelativePanel>
+                <RelativePanel Grid.Row="1" HorizontalAlignment="Center">
+                    <Image Name="img4" Source="ms-appx:///Assets/ola.png"  HorizontalAlignment="Center" VerticalAlignment="Center"  Height="50" />
+                    <Image Name="img5" Source="ms-appx:///Assets/uber.png" Margin="40,0,0,0" RelativePanel.RightOf="img4" HorizontalAlignment="Center"   Width="50"   />
+                <TextBlock Name="provider" RelativePanel.Below="img5" Text="     OLA             UBER" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                </RelativePanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="13" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RelativePanel>
+                    <TextBlock Name="des4" Margin="0,8,0,0" FontSize="20" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" TextAlignment="Center" Text="Multiple Options" TextWrapping="Wrap"/>
+                </RelativePanel>
+                <RelativePanel Grid.Row="1">
+              <Image Name="fork" Height="50" Width="50"  Source="ms-appx:///Assets/fork.png"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center" RelativePanel.AlignLeftWithPanel="True"/>
+                <TextBlock Name="des5" FontSize="13" RelativePanel.Below="fork" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" TextAlignment="Center" Text="Fastest cab" TextWrapping="Wrap"/>
+                <TextBlock Name="des7" FontSize="13" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="des6" RelativePanel.AlignRightWithPanel="True" TextAlignment="Center" Text="Invite and Share" TextWrapping="Wrap"/>
+                <TextBlock Name="des6" FontSize="13" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="des5"  RelativePanel.AlignRightWithPanel="True" TextAlignment="Center" Text="Cheapest cab" TextWrapping="Wrap"/>
+                </RelativePanel>
+            </Grid>
+        </Grid>
+    </Grid>
+    </ScrollViewer>
+</Page>

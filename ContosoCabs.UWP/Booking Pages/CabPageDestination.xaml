@@ -1,0 +1,155 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Home.CabPageDestination"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP"
+    xmlns:bm="using:Bing.Maps"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="10,20,10,5" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Maps:MapControl x:Name="MyMap"/>
+
+            <TextBlock x:Name="positionTextBlock" Grid.Row="0" FontSize="22"/>
+
+
+            <Slider x:Name="mySlider" Maximum="20" Minimum="10" ValueChanged="Slider_ValueChanged"/>
+
+            <ListView x:Name="CabsListView" Grid.Row="1" IsItemClickEnabled="True" ItemClick="CabsListView_ItemClick">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="ListCabPanel">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Width="56" 
+                               Height="56" 
+                               Grid.Row="0"
+                               Grid.RowSpan="2"
+                               Grid.Column="0"
+                               Margin="0,4,0,0"
+                               x:Name="CabImage">
+                                <Image.Source>
+                                    <BitmapImage UriSource="{Binding ImageURL}" />
+                                </Image.Source>
+                            </Image>
+                            <TextBlock x:Name="CabType" 
+                                   Text="{Binding Type}"
+                                   Grid.Row="2"
+                                   Grid.Column="0"
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold"/>
+
+                            <TextBlock x:Name="CabProvider"
+                                   Text="{Binding Provider}"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Grid.Row="0"
+                                   Grid.Column="1" />
+
+                            <TextBlock x:Name="CabETA"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   Grid.RowSpan="1"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding Eta}"/>
+                            <TextBlock x:Name="CabBaseFare"
+                                   Grid.Row="0"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Grid.Column="2"
+                                   Text="{Binding CurrentEstimate.FareData.BaseFare}" />
+
+                            <TextBlock x:Name="CabFreeKMS"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   Grid.Column="2"
+                                   Text="{Binding CurrentEstimate.FareData.CostPerKilometer}" />
+
+
+                            <TextBlock x:Name="CabPrice"
+                                   Grid.Row="0"
+                                       Grid.Column="3"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                   Text="{Binding CurrentEstimate.FareData.CostPerKilometer}" 
+                                   />
+                            <TextBlock x:Name="CabPriceMinute"
+                                   Grid.Row="1"
+                                   Grid.Column="3"
+                                   HorizontalAlignment="Center"
+                                   Text="{Binding CurrentEstimate.FareData.CostPerMinute}"/>
+
+                            <TextBlock x:Name="Estimate"
+                                   Text="{Binding  CurrentEstimate.LowRange}"
+                                   Grid.RowSpan="2"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Grid.Column="4"
+                                   FontSize="15" />
+                            <TextBlock x:Name="EstimateText"
+                                   Text="{Binding CurrentEstimate.HighRange}"
+                                   Grid.Row="3"
+                                   FontSize="15"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Center"
+                                   Grid.Column="4" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ProgressRing Name="progress" HorizontalAlignment="Center" Height="40" Width="40" Margin="15,244,0,0" VerticalAlignment="Top"/>
+            <Image Source="ms-appx:///Assets/gpsLogo.png" Margin="12,65,288,215" Height="20" Width="20" RenderTransformOrigin="-1.656,-4.539"/>
+            <Image Source="ms-appx:///Assets/gpsLogo.png" Margin="12,131,288,149" Height="20" Width="20" RenderTransformOrigin="-1.656,-4.539"/>
+            <TextBox x:Name="SourceBox" 
+                        Text="     PICKUP LOCATION" FontSize="12"
+                        Width="300" Background="White" FontWeight="Bold" Foreground="Green"
+                        Margin="10,60,10,0" BorderBrush="Transparent"
+                        VerticalAlignment="Top" IsHitTestVisible="False"
+                        HorizontalAlignment="Center" Height="23" />
+            <TextBox x:Name="SrcBox" 
+                        Text="MICROSOFT BUILDING 1" FontSize="15" IsHitTestVisible="False"
+                        Width="300" Background="White" Foreground="Green"
+                        Margin="10,88,10,0" BorderBrush="Transparent"
+                        VerticalAlignment="Top" Height="27"
+                        HorizontalAlignment="Center" />
+            <TextBox x:Name="DestinationBox" 
+                        Text="     DROPOFF LOCATION" Foreground="Red" FontWeight="Bold"
+                        Width="300" Background="White" BorderBrush="Transparent" 
+                        Margin="0,126,0,0" FontSize="12" IsHitTestVisible="False"
+                        VerticalAlignment="Top" Height="12"
+                        HorizontalAlignment="Center" />
+            <TextBox x:Name="DestBox" 
+                        Text="" Foreground="Red" IsHitTestVisible="False"
+                        Width="300" Background="White" BorderBrush="Transparent" 
+                        Margin="0,154,0,0" FontSize="15"
+                        VerticalAlignment="Top" Height="15"
+                        HorizontalAlignment="Center" />
+        </Grid>
+    </Grid>
+
+</Page>
+

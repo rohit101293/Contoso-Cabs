@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:id="@+id/loadingdailogimage"
+        android:layout_centerInParent="true"
+        android:background="#00ffffff"
+        android:src="@drawable/Icon" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressloader"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/blue"
+        android:background="#00ffffff" />
+</RelativeLayout>

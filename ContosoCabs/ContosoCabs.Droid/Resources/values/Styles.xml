@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">#000000</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">#006DF0</item>
+    <item name="drawerArrowStyle">@style/MyDrawerStyle</item>
+  </style> 
+  <style name="Theme.Splash" parent="android:Theme">
+    <item name="android:windowBackground">@drawable/Icon</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="TextStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorAccent">#006DF0</item>
+    <item name="colorPrimary">#000000</item>
+    <item name="colorPrimaryDark">#000000</item>
+  </style>
+  <style name ="AppTheme" parent="Theme.AppCompat.Light">
+    <item name="colorPrimary">#000000</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">@color/blue</item>
+    <item name="android:actionMenuTextColor">@color/title</item>
+  </style>
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="drawerArrowStyle">@style/MyDrawerStyle</item>
+  </style>
+  <style name="MyDrawerStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <item name="color">#ffffff</item>
+    <item name="spinBars">true</item>
+  </style>
+</resources>

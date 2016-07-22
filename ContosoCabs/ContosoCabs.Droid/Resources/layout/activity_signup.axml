@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:background="@android:color/background_light"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4.5"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="Please enter your details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1"
+                    android:textSize="16dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:layout_marginLeft="10dp" />
+                <View
+                    android:layout_height="2dp"
+                    android:layout_width="fill_parent"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/background" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:weightSum="10"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="260dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+                        <EditText xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/siname"
+                            android:maxLines="1"
+                            android:hint="Name"
+                            android:gravity="left" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="260dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+                        <EditText xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/simobile"
+                            android:maxLength="10"
+                            android:inputType="phone"
+                            android:hint="Mobile"
+                            android:gravity="left" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="260dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+                        <EditText xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/siemail"
+                            android:maxLines="1"
+                            android:hint="Email ID"
+                            android:gravity="left" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="260dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+                        <EditText xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sipass"
+                            android:maxLines="1"
+                            android:inputType="textPassword"
+                            android:hint="Password"
+                            android:gravity="left" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="260dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+                        <EditText xmlns:tools="http://schemas.android.com/tools"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/siconpass"
+                            android:maxLines="1"
+                            android:inputType="textPassword"
+                            android:hint="Confirm Password"
+                            android:gravity="left" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:weightSum="10"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/term1"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:backgroundTint="#006df0"
+                        android:checked="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Please accept the Terms and Conditions"
+                        android:layout_toRightOf="@id/term1"
+                        android:id="@+id/term2"
+                        android:textColor="#006df0"
+                        android:padding="10dp" />
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/term1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:id="@+id/nmbrverified"
+                            android:layout_height="wrap_content"
+                            android:text="Your Phone Number will be verified using OTP" />
+                    </android.support.design.widget.TextInputLayout>
+                    <View
+                        android:layout_height="2dp"
+                        android:layout_width="fill_parent"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/background" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:text="SIGN UP"
+                        android:layout_centerInParent="true"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/signupbtn"
+                        android:textColor="#ffffff"
+                        android:background="#006DF0" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

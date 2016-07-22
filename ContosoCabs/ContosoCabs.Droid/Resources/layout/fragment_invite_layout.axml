@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:id="@+id/imageinvite"
+                android:layout_height="150dp"
+                android:src="@drawable/sharing" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/invitetext"
+                android:includeFontPadding="false"
+                android:layout_below="@+id/imageinvite"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:text="@string/shareinvite" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#ffffff"
+                android:textColor="@color/blue"
+                android:id="@+id/invite"
+                android:text="Invite" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

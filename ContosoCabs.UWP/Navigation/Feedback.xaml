@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Navigation.Feedback"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid x:Name="LoginDetails" RequestedTheme="Light" Background="#e6e6e6">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                            <AdaptiveTrigger MinWindowWidth="720" />
+                        </VisualState.StateTriggers>
+
+                        <VisualState.Setters>
+                            <Setter Target="myPanel.Opacity" Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="6*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="0" Fill="CadetBlue" HorizontalAlignment="Stretch"/>
+                    <RelativePanel Grid.Row="0">
+                        <TextBlock Name="Title" Text="Feedback"  FontWeight="SemiBold" FontSize="22" Foreground="Black" HorizontalAlignment="Left"></TextBlock>
+                    </RelativePanel>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <RelativePanel Grid.Row="1" Grid.Column="1" Background="White" IsHitTestVisible="False">
+                            <TextBlock x:Name="lheader"  HorizontalAlignment="Left" 
+        	 TextWrapping="Wrap" 
+        	Text="Your feedback is valuable! Do share!" IsHitTestVisible="False"
+        	VerticalAlignment="Top" 
+            RelativePanel.AlignHorizontalCenterWithPanel="True" TextAlignment="Center"
+        	Padding="10,10,10,10" FontSize="20" Margin="-15,0,-15,-12"  />
+                        </RelativePanel>
+                    </Grid>
+                    <RelativePanel Background="White" Grid.Row="3" Grid.Column="1" BorderBrush="#e6e6e6">
+                        <Button Name="jbs" Width="150" Click="Share" HorizontalAlignment="Center"
+                                Content="Share" FontSize="20"
+                                RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                                Style="{StaticResource BlackButtonStyle}"/>
+                    </RelativePanel>
+
+                </Grid>
+
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</Page>

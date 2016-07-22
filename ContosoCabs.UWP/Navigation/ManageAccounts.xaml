@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="ContosoCabs.UWP.Navigation.ManageAccounts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoCabs.UWP.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer>
+        <Grid x:Name="Details" Background="#E6E6E6" >
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
+                            <!--Youc can now take latest version-->
+                            <AdaptiveTrigger MinWindowWidth="720" />
+                        </VisualState.StateTriggers>
+
+                        <VisualState.Setters>
+                            <Setter Target="Panel.Opacity" Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="45"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="0" Fill="CadetBlue" HorizontalAlignment="Stretch"/>
+                    <RelativePanel Grid.Row="0">
+                        <TextBlock Name="Title" Text="Manage Accounts"  FontWeight="SemiBold" FontSize="22" Foreground="Black" HorizontalAlignment="Left"></TextBlock>
+                    </RelativePanel>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <RelativePanel  Grid.Row="3"  Grid.Column="1" Background="White" >
+                            <TextBlock x:Name="UsernameBox" TextAlignment="Center" HorizontalAlignment="Center"
+                 RelativePanel.AlignHorizontalCenterWithPanel="True"
+                 TextWrapping="Wrap" Text="Add account"
+                 Width="260" IsColorFontEnabled="False" 
+                     FontSize="20"  Margin="-5,3,-5,-49"/>
+                        </RelativePanel>
+                        <RelativePanel  Grid.Row="5"  Grid.Column="1" Background="White"  >
+                            <TextBlock x:Name="ContactNumberBox" HorizontalAlignment="Left" 
+                 RelativePanel.AlignHorizontalCenterWithPanel="True"
+                 TextWrapping="Wrap" TextAlignment="Center"
+                 Margin="-5,0" VerticalAlignment="Top"
+                 Width="260" Height="50" Text="Select the Provider"
+                 IsColorFontEnabled="False" FontSize="20"/>
+
+                        </RelativePanel>
+                        <RelativePanel  Grid.Row="6"  Grid.Column="1" Background="White"  >
+                            <RadioButton Name="ola" Content="Ola" FontSize="17" RelativePanel.AlignHorizontalCenterWithPanel="True" Height="54" Margin="0,0,0,-21.333"/>
+                        </RelativePanel>
+                        <RelativePanel  Grid.Row="7"  Grid.Column="1" Background="White" >
+                            <RadioButton Name="uber" Click="UBER" Content="Uber" FontSize="17" RelativePanel.AlignHorizontalCenterWithPanel="True" Height="54" Margin="0,0,0,-21.333" />
+                        </RelativePanel>
+                    </Grid>
+                    <RelativePanel Grid.Row="2" Background="White">
+                        <Button Name="st" Width="150" HorizontalAlignment="Center"
+                             Content="Add Account" FontSize="20" Style="{StaticResource BlackButtonStyle}"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" Height="45" Margin="0,0,0,-6"/>
+                    </RelativePanel>
+                </Grid>
+
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</Page>
